@@ -1,0 +1,61 @@
+04-06-2024 21:41:56 Frankenstein already exist
+04-06-2024 21:41:56 Dracula already exist
+04-06-2024 21:41:56 BeoWulf already exist
+04-06-2024 21:42:39 Frankenstein already exist
+04-06-2024 21:42:39 Dracula already exist
+04-06-2024 21:42:39 BeoWulf already exist
+04-06-2024 21:49:26 Frankenstein already exist
+04-06-2024 21:49:26 Dracula already exist
+04-06-2024 21:49:26 BeoWulf already exist
+04-06-2024 21:49:26 RemoveCopies Failed: Spongebob does not exist
+04-06-2024 21:50:27 Frankenstein already exist
+04-06-2024 21:50:27 Dracula already exist
+04-06-2024 21:50:27 BeoWulf already exist
+04-06-2024 21:50:49 Frankenstein already exist
+04-06-2024 21:50:49 Dracula already exist
+04-06-2024 21:50:49 BeoWulf already exist
+04-06-2024 21:51:04 Frankenstein already exist
+04-06-2024 21:51:04 Dracula already exist
+04-06-2024 21:51:04 BeoWulf already exist
+04-06-2024 21:51:04 RemoveCopies Warning: Frankenstein does not have enough copies to remove. Set Quantity to ZERO!
+05-06-2024 20:32:03 Frankenstein already exist
+05-06-2024 20:32:03 Dracula already exist
+05-06-2024 20:32:03 BeoWulf already exist
+05-06-2024 20:32:03 RemoveCopies Warning: Frankenstein does not have enough copies to remove. Set Quantity to ZERO!
+05-06-2024 20:32:43 Frankenstein already exist
+05-06-2024 20:32:43 Dracula already exist
+05-06-2024 20:32:43 BeoWulf already exist
+05-06-2024 20:32:43 RemoveCopies Warning: Frankenstein does not have enough copies to remove. Set Quantity to ZERO!
+05-06-2024 20:33:10 Frankenstein already exist
+05-06-2024 20:33:11 Dracula already exist
+05-06-2024 20:33:12 BeoWulf already exist
+05-06-2024 20:33:41 Frankenstein already exist
+05-06-2024 20:33:43 Dracula already exist
+05-06-2024 20:33:44 BeoWulf already exist
+05-06-2024 20:33:45 RemoveCopies Warning: Frankenstein does not have enough copies to remove. Set Quantity to ZERO!
+05-06-2024 21:01:22 Invalid Transaction: Please enter an acutal number in the parameters
+05-06-2024 21:07:53 Invalid Transaction: Incorrect Parameter Values --> Add Dracula two
+05-06-2024 21:09:27 Invalid Transaction: Incorrect Value --> Add Dracula -2
+14-06-2024 17:41:20 Dracula already exist
+14-06-2024 19:58:56 RentMovie Failed: Dracula does not exist
+14-06-2024 19:59:28 RentMovie Failed: Dracula does not exist
+14-06-2024 19:59:34 Invalid Transaction: Incorrect Parameters --> add Dracula
+14-06-2024 19:59:41 Dracula already exist
+14-06-2024 20:00:04 Invalid Transaction: Incorrect Parameters --> Add Forest Gump 12
+14-06-2024 20:06:02 RentMovie Failed: Dracula does not exist
+14-06-2024 20:09:53 RentMovie Failed: Dracula does not exist
+14-06-2024 20:22:53 RentMovie Failed: dracula does not exist
+18-06-2024 17:38:40 ReturnMovie Failed: Beowulf does not exist
+18-06-2024 17:56:32 Invalid Transaction: Incorrect Parameters --> Add Halloween
+18-06-2024 17:58:02 Invalid Transaction: Incorrect Parameters --> Add Copies Halloween 10
+18-06-2024 17:59:06 AddCopies Failed: halloween does not exist
+18-06-2024 18:02:33 Invalid Transaction: Incorrect Parameter Values --> Add Copies Halloween 10
+18-06-2024 19:32:48 Invalid Transaction: Incorrect Value --> Set Quantity Halloween 0
+19-06-2024 17:25:32 Invalid Transaction: Incorrect Parameter Values --> LESS COPIES  Forest Gump  10
+19-06-2024 17:26:33 Invalid Transaction: Incorrect Parameter Values --> LESS COPIES Forest Gump 10 20
+19-06-2024 17:26:42 Invalid Transaction: Incorrect Parameter Values --> LESS COPIES Forest Gump 10 20
+19-06-2024 19:41:39 Invalid Transaction: Incorrect Parameters --> Add Frankenstein
+19-06-2024 19:42:13 Invalid Transaction: Incorrect Parameters --> Add Frankenstein
+19-06-2024 19:49:16 Frankenstein already exist
+19-06-2024 19:51:26 Dracula already exist
+19-06-2024 19:53:51 Halloween already exist
