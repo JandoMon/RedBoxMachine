@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import RedBoxInventorySystem.RedBoxFunctions.Movie.Transactions;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ErrorOperations;
+import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.UserOperations;
 
 public class kiosk {
 
@@ -38,7 +39,7 @@ public class kiosk {
                         String username = scan.nextLine();
                         System.out.print("Please Enter Password: ");
                         String password = scan.nextLine();
-                        if (username.equals("jando") && password.equals("123")) {
+                        if (UserOperations.isValid(username, password)) {
                             System.out.println("Welcome Back Admin :)");
                             Admin = true;
                         } else {
