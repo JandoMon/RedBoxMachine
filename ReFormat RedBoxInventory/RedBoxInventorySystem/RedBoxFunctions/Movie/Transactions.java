@@ -1,9 +1,8 @@
 package RedBoxInventorySystem.RedBoxFunctions.Movie;
 
 import RedBoxInventorySystem.RedBoxFunctions.Common.BinarySearchTree;
-import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ActionOperations;
-import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ErrorOperations;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.InventoryOperations;
+import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.StorageOperations;
 
 public class Transactions extends InventoryOperations {
 
@@ -17,16 +16,16 @@ public class Transactions extends InventoryOperations {
         if (rentMovie != null) {
             if (!rentMovie.Rent()) {
                 System.out.println("RentMovie Failed: Not enough copies");
-                ErrorOperations
+                StorageOperations
                         .LogError(" RentMovie Failed: " + titleName + " does not have enough copies");
                 return false;
             }
-            InventoryOperations.LogMovie(rentMovie);
-            ActionOperations.LogAction((" Rent: " + titleName + " " + rentMovie.getAvailable()));
+            LogMovie(rentMovie);
+            StorageOperations.LogAction((" Rent: " + titleName + " " + rentMovie.getAvailable()));
             return true;
         }
         System.out.println("Please Enter the Movie Name Correctly!(It is case-sensitive!)");
-        ErrorOperations.LogError(" RentMovie Failed: " + titleName + " does not exist");
+        StorageOperations.LogError(" RentMovie Failed: " + titleName + " does not exist");
         return false;
 
     }
@@ -34,13 +33,18 @@ public class Transactions extends InventoryOperations {
     public static boolean Return(String titleName) {
         Movie rentMovie = tree.findNode(new Movie(titleName));
         if (rentMovie != null) {
-            rentMovie.Return();
-            InventoryOperations.LogMovie(rentMovie);
-            ActionOperations.LogAction((" Return: " + titleName + " " + rentMovie.getAvailable()));
+            if (!rentMovie.Return()) {
+                System.out.println("RentMovie Failed: Already at Max Capacity");
+                StorageOperations
+                        .LogError(" RentMovie Failed: " + titleName + " is already at Max Capacity");
+                return false;
+            }
+            LogMovie(rentMovie);
+            StorageOperations.LogAction((" Return: " + titleName + " " + rentMovie.getAvailable()));
             return true;
         }
         System.out.println("Please Enter the Movie Name Correctly!(It is case-sensitive!)");
-        ErrorOperations.LogError(" ReturnMovie Failed: " + titleName + " does not exist");
+        StorageOperations.LogError(" ReturnMovie Failed: " + titleName + " does not exist");
         return false;
     }
 
@@ -51,14 +55,14 @@ public class Transactions extends InventoryOperations {
     // add the title to the tree
     public static boolean AddNewTitle(String titleName, int quantity) {
         Movie newMovie = new Movie(titleName, quantity);
-        if (InventoryOperations.isContains(titleName)) {
+        if (isContains(titleName)) {
             System.out.println(titleName + " already exist");
-            ErrorOperations.LogError(" " + titleName + " already exist");
+            StorageOperations.LogError(" " + titleName + " already exist");
             return false;
         }
         tree.insertNode(newMovie);
-        ActionOperations.LogAction(" Add: " + titleName + " " + quantity);
-        InventoryOperations.AddMovie(newMovie);
+        StorageOperations.LogAction(" Add: " + titleName + " " + quantity);
+        AddMovie(newMovie);
         return true;
     }
 
@@ -68,10 +72,10 @@ public class Transactions extends InventoryOperations {
         boolean success = tree.remove(removeMovie);
         if (!success) {
             System.out.println(" RemoveTitle: " + titleName + " does not exist");
-            ErrorOperations.LogError(" RemoveTitle: " + titleName + " does not exist");
+            StorageOperations.LogError(" RemoveTitle: " + titleName + " does not exist");
         }
-        ActionOperations.LogAction(" Remove:" + titleName);
-        InventoryOperations.removeMovie(removeMovie);
+        StorageOperations.LogAction(" Remove:" + titleName);
+        removeMovie(removeMovie);
         return success;
     }
 
@@ -80,13 +84,13 @@ public class Transactions extends InventoryOperations {
         Movie addCopies = tree.findNode(new Movie(titleName));
         if (addCopies != null) {
             addCopies.adjustCopies(add);
-            ActionOperations
+            StorageOperations
                     .LogAction(" AddCopies: " + titleName + " " + addCopies.getQuantity() + " " + add);
-            InventoryOperations.LogMovie(addCopies);
+            LogMovie(addCopies);
             return true;
         }
         System.out.println(" AddCopies Failed: " + titleName + " does not exist");
-        ErrorOperations.LogError(" AddCopies Failed: " + titleName + " does not exist");
+        StorageOperations.LogError(" AddCopies Failed: " + titleName + " does not exist");
         return false;
     }
 
@@ -97,17 +101,17 @@ public class Transactions extends InventoryOperations {
             if (!removeCopies.adjustCopies(-remove)) {
                 System.out.println(" RemoveCopies Warning: " + titleName
                         + " does not have enough copies to remove. Set Quantity to ZERO!");
-                ErrorOperations.LogError(" RemoveCopies Warning: " + titleName
+                StorageOperations.LogError(" RemoveCopies Warning: " + titleName
                         + " does not have enough copies to remove. Set Quantity to ZERO!");
 
             }
-            ActionOperations.LogAction(
+            StorageOperations.LogAction(
                     " RemoveCopies: " + titleName + " " + removeCopies.getQuantity() + " " + remove);
-            InventoryOperations.LogMovie(removeCopies);
+            LogMovie(removeCopies);
             return true;
         }
         System.out.println(" RemoveCopies Failed: " + titleName + " does not exist");
-        ErrorOperations.LogError(" RemoveCopies Failed: " + titleName + " does not exist");
+        StorageOperations.LogError(" RemoveCopies Failed: " + titleName + " does not exist");
         return false;
     }
 
@@ -116,12 +120,12 @@ public class Transactions extends InventoryOperations {
         Movie setMovie = tree.findNode(new Movie(titleName));
         if (setMovie != null) {
             setMovie.setQuanity(quantity);
-            ActionOperations.LogAction(" setQuantity: " + titleName + " " + setMovie.getQuantity());
-            InventoryOperations.LogMovie(setMovie);
+            StorageOperations.LogAction(" setQuantity: " + titleName + " " + setMovie.getQuantity());
+            LogMovie(setMovie);
             return true;
         }
         System.out.println(" setQuantity Failed: " + titleName + " does not exist");
-        ErrorOperations.LogError(" setQuantity Failed: " + titleName + " does not exist");
+        StorageOperations.LogError(" setQuantity Failed: " + titleName + " does not exist");
         return false;
     }
 
@@ -134,15 +138,15 @@ public class Transactions extends InventoryOperations {
         String input = "Movie List";
         System.out.println(String.format("%" + 20 + "s", input));
         System.out.println("---------------------------------");
-        InventoryOperations.printLog();
+        printLog();
 
     }
 
     // Get the Inventory on the tree
     public static void getCatalog() {
-        InventoryOperations.getScanner(FILE_NAME);
-        while (InventoryOperations.readFile.hasNextLine()) {
-            String[] movieParts = InventoryOperations.readFile.nextLine().split(",");
+        getScanner(FILE_NAME);
+        while (readFile.hasNextLine()) {
+            String[] movieParts = readFile.nextLine().split(",");
             for (int i = 0; i < movieParts.length; i++) {
                 movieParts[i] = movieParts[i].trim();
             }
@@ -150,7 +154,7 @@ public class Transactions extends InventoryOperations {
             currMovie.setRented(Integer.parseInt(movieParts[2]));
             tree.insertNode(currMovie);
         }
-        InventoryOperations.readFile.close();
+        readFile.close();
 
     }
 }

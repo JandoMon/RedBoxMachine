@@ -3,7 +3,7 @@ package RedBoxInventorySystem;
 import java.util.Scanner;
 
 import RedBoxInventorySystem.RedBoxFunctions.Movie.Transactions;
-import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ErrorOperations;
+import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.StorageOperations;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.UserOperations;
 
 public class kiosk {
@@ -178,20 +178,20 @@ public class kiosk {
     }
 
     public static void incorrectParam(String[] commandParts) {
-        ErrorOperations
+        StorageOperations
                 .LogError(" Invalid Transaction: Incorrect Parameters -->"
                         + getCommandError(commandParts));
         System.out.println("Please Enter Correct Transaction Parameters");
     }
 
     public static void inccorrectParamVal(String[] commandParts) {
-        ErrorOperations.LogError(
+        StorageOperations.LogError(
                 " Invalid Transaction: Incorrect Parameter Values -->" + getCommandError(commandParts));
         System.out.println("Please Enter Correct Transaction Parameters Values");
     }
 
     public static void incorrectValPos(String[] commandParts) {
-        ErrorOperations
+        StorageOperations
                 .LogError(" Invalid Transaction: Incorrect Value -->"
                         + getCommandError(commandParts));
         System.out.println("Please Enter Positive Integer");

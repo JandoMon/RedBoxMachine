@@ -60,3 +60,5 @@
 19-06-2024 19:51:26 Dracula already exist
 19-06-2024 19:53:51 Halloween already exist
 22-07-2024 19:27:31 RemoveCopies Failed: dracula does not exist
+22-07-2024 20:21:43 RentMovie Failed: Halloween is already at Max Capacity
+22-07-2024 20:24:17 RentMovie Failed: Halloween is already at Max Capacity

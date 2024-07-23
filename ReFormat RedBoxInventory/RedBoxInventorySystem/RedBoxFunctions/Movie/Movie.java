@@ -73,10 +73,12 @@ public class Movie implements Comparable<Movie> {
         return false;
     }
 
-    public void Return() {
+    public boolean Return() {
         if (rented > 0) {
             rented--;
+            return true;
         }
+        return false;
     }
 
     @Override

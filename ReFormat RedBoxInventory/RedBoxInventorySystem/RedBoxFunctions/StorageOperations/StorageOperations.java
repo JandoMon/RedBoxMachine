@@ -2,6 +2,8 @@ package RedBoxInventorySystem.RedBoxFunctions.StorageOperations;
 
 import java.io.File;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 import RedBoxInventorySystem.RedBoxFunctions.Common.PrintWriterFactory;
@@ -13,6 +15,31 @@ public class StorageOperations {
     public static PrintWriter writeFile;
 
     public final static String TEMP_NAME = "RedBoxInventorySystem\\RedBoxFunctions\\LogTransactions\\temp.txt";
+    public final static String ERROR_FILE = "RedBoxInventorySystem/RedBoxFunctions/LogTransactions/error.log";
+    public final static String ACTION_FILE = "RedBoxInventorySystem/RedBoxFunctions/LogTransactions/LogAction.log";
+
+    // Log error for the redBox
+    public static boolean LogError(String error) {
+        return LogEvent(error, ERROR_FILE);
+    }
+
+    // Log action for the redBox
+    public static boolean LogAction(String action) {
+        return LogEvent(action, ACTION_FILE);
+    }
+
+    // log event into the corresponding file
+    public static boolean LogEvent(String error, String FILE_NAME) {
+        File currFile = getScanner(FILE_NAME);
+        File temp = getPrintWriter();
+
+        while (readFile.hasNextLine()) {
+            writeFile.write(readFile.nextLine() + "\n");
+        }
+        writeFile.write(getTime() + error + "\n");
+        renameFile(temp, currFile, FILE_NAME);
+        return true;
+    }
 
     // Update Scanner to get instance
     public static File getScanner(String FILE_NAME) {
@@ -42,7 +69,7 @@ public class StorageOperations {
             // Delete the current file
             if (!currFile.delete()) {
                 System.out.println("File did not delete");
-                ErrorOperations.LogError("File did not delete");
+                LogError("File did not delete");
             }
 
             // Rename the temporary file to the desired file name (will delete the old file
@@ -55,6 +82,7 @@ public class StorageOperations {
             // Handle any exceptions
             e.printStackTrace();
         }
+
     }
 
     // Close Scanner
@@ -67,5 +95,10 @@ public class StorageOperations {
     public static void closerPrintWriter() {
         PrintWriterFactory.closePrintWriter();
         writeFile.close();
+    }
+
+    // get the current time
+    public static String getTime() {
+        return LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
     }
 }

@@ -1,5 +1,5 @@
 "Frankenstein",10,2
-"Dracula",10,0
-"Halloween",10,0
+"Dracula",10,1
+"Halloween",10,1
 "Friday the 13th",10,0
 "The Conjuring",10,0
