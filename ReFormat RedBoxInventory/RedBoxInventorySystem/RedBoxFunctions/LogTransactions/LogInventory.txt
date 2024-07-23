@@ -1,4 +1,4 @@
-"Frankenstein",10,0
+"Frankenstein",10,2
 "Dracula",10,0
 "Halloween",10,0
 "Friday the 13th",10,0

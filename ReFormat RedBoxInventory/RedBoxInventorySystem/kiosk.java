@@ -98,8 +98,8 @@ public class kiosk {
                         try {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
-                            } else if (Integer.parseInt(commandParts[3]) > 0) {
-                                Transactions.AddCopies(commandParts[2], Integer.parseInt(commandParts[3]));
+                            } else if (Integer.parseInt(commandParts[2]) > 0) {
+                                Transactions.AddCopies(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }
@@ -112,8 +112,8 @@ public class kiosk {
                         try {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
-                            } else if (Integer.parseInt(commandParts[3]) > 0) {
-                                Transactions.RemoveCopies(commandParts[2], Integer.parseInt(commandParts[3]));
+                            } else if (Integer.parseInt(commandParts[2]) > 0) {
+                                Transactions.RemoveCopies(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }
@@ -126,7 +126,7 @@ public class kiosk {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
                             } else if (Integer.parseInt(commandParts[3]) >= 0) {
-                                Transactions.setQuantity(commandParts[2], Integer.parseInt(commandParts[3]));
+                                Transactions.setQuantity(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }

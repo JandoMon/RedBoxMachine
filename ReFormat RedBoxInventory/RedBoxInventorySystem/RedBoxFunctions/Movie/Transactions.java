@@ -5,7 +5,7 @@ import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ActionOperations;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ErrorOperations;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.InventoryOperations;
 
-public class Transactions {
+public class Transactions extends InventoryOperations {
 
     public static BinarySearchTree<Movie> tree = new BinarySearchTree<>();
 
@@ -140,7 +140,7 @@ public class Transactions {
 
     // Get the Inventory on the tree
     public static void getCatalog() {
-        InventoryOperations.getScanner();
+        InventoryOperations.getScanner(FILE_NAME);
         while (InventoryOperations.readFile.hasNextLine()) {
             String[] movieParts = InventoryOperations.readFile.nextLine().split(",");
             for (int i = 0; i < movieParts.length; i++) {
