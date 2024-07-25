@@ -3,7 +3,7 @@ package RedBoxInventorySystem;
 import java.util.Scanner;
 
 import RedBoxInventorySystem.RedBoxFunctions.Movie.Transactions;
-import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.ErrorOperations;
+import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.StorageOperations;
 import RedBoxInventorySystem.RedBoxFunctions.StorageOperations.UserOperations;
 
 public class kiosk {
@@ -98,8 +98,8 @@ public class kiosk {
                         try {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
-                            } else if (Integer.parseInt(commandParts[3]) > 0) {
-                                Transactions.AddCopies(commandParts[2], Integer.parseInt(commandParts[3]));
+                            } else if (Integer.parseInt(commandParts[2]) > 0) {
+                                Transactions.AddCopies(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }
@@ -112,8 +112,8 @@ public class kiosk {
                         try {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
-                            } else if (Integer.parseInt(commandParts[3]) > 0) {
-                                Transactions.RemoveCopies(commandParts[2], Integer.parseInt(commandParts[3]));
+                            } else if (Integer.parseInt(commandParts[2]) > 0) {
+                                Transactions.RemoveCopies(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }
@@ -126,7 +126,7 @@ public class kiosk {
                             if (commandParts.length != 3) {
                                 incorrectParam(commandParts);
                             } else if (Integer.parseInt(commandParts[3]) >= 0) {
-                                Transactions.setQuantity(commandParts[2], Integer.parseInt(commandParts[3]));
+                                Transactions.setQuantity(commandParts[1], Integer.parseInt(commandParts[2]));
                             } else {
                                 incorrectValPos(commandParts);
                             }
@@ -178,20 +178,20 @@ public class kiosk {
     }
 
     public static void incorrectParam(String[] commandParts) {
-        ErrorOperations
+        StorageOperations
                 .LogError(" Invalid Transaction: Incorrect Parameters -->"
                         + getCommandError(commandParts));
         System.out.println("Please Enter Correct Transaction Parameters");
     }
 
     public static void inccorrectParamVal(String[] commandParts) {
-        ErrorOperations.LogError(
+        StorageOperations.LogError(
                 " Invalid Transaction: Incorrect Parameter Values -->" + getCommandError(commandParts));
         System.out.println("Please Enter Correct Transaction Parameters Values");
     }
 
     public static void incorrectValPos(String[] commandParts) {
-        ErrorOperations
+        StorageOperations
                 .LogError(" Invalid Transaction: Incorrect Value -->"
                         + getCommandError(commandParts));
         System.out.println("Please Enter Positive Integer");
