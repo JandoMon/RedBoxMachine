@@ -23,3 +23,46 @@
 22-07-2024 20:18:04 Return: Dracula 10
 22-07-2024 20:21:26 Rent: Dracula 9
 22-07-2024 20:24:41 Rent: Halloween 9
+29-07-2024 19:31:02 Rent: Test Movie 0
+30-07-2024 19:09:04 AddCopies: Test Movie 2 1
+30-07-2024 19:09:24 RemoveCopies: Test Movie 1 1
+30-07-2024 19:09:26 Rent: Test Movie 0
+30-07-2024 19:09:26 Return: Test Movie 1
+30-07-2024 19:09:26 setQuantity: Test Movie 10
+30-07-2024 19:09:30 Remove:Test Movie
+30-07-2024 19:13:31 Add: Test Movie 1
+30-07-2024 19:13:39 AddCopies: Test Movie 2 1
+30-07-2024 19:13:53 Add: Test Movie 1
+30-07-2024 19:13:55 AddCopies: Test Movie 2 1
+30-07-2024 19:13:55 RemoveCopies: Test Movie 1 1
+30-07-2024 19:13:55 Rent: Test Movie 0
+30-07-2024 19:13:55 Return: Test Movie 1
+30-07-2024 19:13:55 setQuantity: Test Movie 10
+30-07-2024 19:15:50 Add: Test Movie 1
+30-07-2024 19:15:54 AddCopies: Test Movie 2 1
+30-07-2024 19:16:05 RemoveCopies: Test Movie 1 1
+30-07-2024 19:16:05 Rent: Test Movie 0
+30-07-2024 19:16:05 Return: Test Movie 1
+30-07-2024 19:16:05 setQuantity: Test Movie 10
+30-07-2024 19:16:06 Remove:Test Movie
+30-07-2024 19:16:35 Add: Test Movie 1
+30-07-2024 19:16:38 AddCopies: Test Movie 2 1
+30-07-2024 19:16:38 RemoveCopies: Test Movie 1 1
+30-07-2024 19:16:38 Rent: Test Movie 0
+30-07-2024 19:16:38 Return: Test Movie 1
+30-07-2024 19:16:38 setQuantity: Test Movie 10
+30-07-2024 19:16:38 Remove:Test Movie
+30-07-2024 19:16:41 Add: Test Movie 1
+30-07-2024 19:16:41 AddCopies: Test Movie 2 1
+30-07-2024 19:16:41 RemoveCopies: Test Movie 1 1
+30-07-2024 19:16:41 Rent: Test Movie 0
+30-07-2024 19:16:41 Return: Test Movie 1
+30-07-2024 19:16:41 setQuantity: Test Movie 10
+30-07-2024 19:16:41 Remove:Test Movie
+30-07-2024 19:18:00 Add: Test Movie 1
+30-07-2024 19:18:08 AddCopies: Test Movie 2 1
+30-07-2024 19:18:18 RemoveCopies: Test Movie 1 1
+30-07-2024 19:18:22 Rent: Test Movie 0
+30-07-2024 19:18:31 Return: Test Movie 1
+30-07-2024 19:18:37 setQuantity: Test Movie 10
+30-07-2024 19:18:41 Remove:Test Movie
